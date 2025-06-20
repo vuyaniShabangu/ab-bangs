@@ -116,7 +116,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/hero-cooking.jpg"
+                  src="/hero-cooking.jpeg"
                   alt="Professional chef at Bang's Kitchen preparing fresh, healthy meals with colorful vegetables and artisanal presentation"
                   width={800}
                   height={600}

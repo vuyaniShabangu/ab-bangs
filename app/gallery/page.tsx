@@ -185,11 +185,6 @@ export default function GalleryPage() {
       category: "Kids Lunches",
     },
     {
-      src: "/kids-lunches/478842099_2528382500692471_3571269903630220357_n.jpg",
-      alt: "Nutritious kids lunchbox with variety of healthy foods",
-      category: "Kids Lunches",
-    },
-    {
       src: "/kids-lunches/478926525_2528382604025794_8115632134599567007_n.jpg",
       alt: "Fresh kids lunch with appealing colors and textures",
       category: "Kids Lunches",
@@ -205,8 +200,23 @@ export default function GalleryPage() {
       category: "Kids Lunches",
     },
     {
-      src: "/kids-lunches/480924943_1182320647230176_4384542768983359776_n.jpg",
-      alt: "Nutritious kids lunch with fun presentation",
+      src: "/kids-lunches/kids-lunch-1.jpeg",
+      alt: "Complete kids meal with balanced nutrition for school",
+      category: "Kids Lunches",
+    },
+    {
+      src: "/kids-lunches/kids-lunch-2.jpeg",
+      alt: "Complete kids meal with balanced nutrition for school",
+      category: "Kids Lunches",
+    },
+    {
+      src: "/kids-lunches/kids-lunch-3.jpeg",
+      alt: "Complete kids meal with balanced nutrition for school",
+      category: "Kids Lunches",
+    },
+    {
+      src: "/kids-lunches/kids-lunch-4.jpeg",
+      alt: "Complete kids meal with balanced nutrition for school",
       category: "Kids Lunches",
     },
     {
