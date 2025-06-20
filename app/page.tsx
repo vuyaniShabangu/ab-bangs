@@ -50,7 +50,7 @@ export default function HomePage() {
       <header className="bg-primary shadow-sm border-b border-primary sticky top-0 z-40">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Image src="/logo.svg" alt="Bang's Kitchen Logo" width={50} height={50} className="h-12 w-auto" />
+            <Image src="./logo.svg" alt="Bang's Kitchen Logo" width={50} height={50} className="h-12 w-auto" />
           </div>
           <nav className="hidden md:flex space-x-8">
             <button
@@ -112,7 +112,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/hero-cooking.jpg"
+                  src="./hero-cooking.jpg"
                   alt="Professional chef at Bang's Kitchen preparing fresh, healthy meals with colorful vegetables and artisanal presentation"
                   width={800}
                   height={600}
@@ -279,7 +279,7 @@ export default function HomePage() {
             </div>
             <div className="bg-cream rounded-lg p-8">
               <Image
-                src="/mission-catering.jpg"
+                src="./mission-catering.jpg"
                 alt="Beautifully arranged catering spread with gourmet appetizers including avocado shrimp crostini, charcuterie, and fresh fruits showcasing Bang's Kitchen's catering expertise"
                 width={500}
                 height={400}
@@ -353,7 +353,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <Image src="/logo.svg" alt="Bang's Kitchen Logo" width={40} height={40} className="h-10 w-auto" />
+                <Image src="./logo.svg" alt="Bang's Kitchen Logo" width={40} height={40} className="h-10 w-auto" />
               </div>
               <p className="text-white/80">
                 Farm-to-table catering excellence for individuals, corporations, and schools.

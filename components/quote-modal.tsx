@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X, Loader2 } from "lucide-react"
-import { sendQuoteEmail } from "@/lib/send-email"
+//import { sendQuoteEmail } from "@/lib/send-email"
 import { SuccessDialog } from "@/components/success-dialog"
 
 interface QuoteModalProps {
@@ -73,7 +73,7 @@ export function QuoteModal({ isOpen, onClose, defaultService }: QuoteModalProps)
     e.preventDefault()
     setIsSubmitting(true)
 
-    try {
+    /*try {
       const result = await sendQuoteEmail(formData)
       setSubmitResult(result)
       setShowSuccessDialog(true)
@@ -90,7 +90,8 @@ export function QuoteModal({ isOpen, onClose, defaultService }: QuoteModalProps)
       setShowSuccessDialog(true)
     } finally {
       setIsSubmitting(false)
-    }
+    }*/
+      setIsSubmitting(false)
   }
 
   const handleCloseSuccessDialog = () => {

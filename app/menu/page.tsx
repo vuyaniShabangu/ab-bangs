@@ -29,7 +29,7 @@ export default function MenuPage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <Link href="/" className="flex items-center space-x-3">
-              <Image src="/logo.svg" alt="Bang's Kitchen Logo" width={50} height={50} className="h-12 w-auto" />
+              <Image src="./logo.svg" alt="Bang's Kitchen Logo" width={50} height={50} className="h-12 w-auto" />
             </Link>
           </div>
           <nav className="hidden md:flex space-x-8">
@@ -394,7 +394,7 @@ export default function MenuPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <Image src="/logo.svg" alt="Bang's Kitchen Logo" width={40} height={40} className="h-10 w-auto" />
+                <Image src="./logo.svg" alt="Bang's Kitchen Logo" width={40} height={40} className="h-10 w-auto" />
               </div>
               <p className="text-white/80">
                 Farm-to-table catering excellence for individuals, corporations, and schools.
