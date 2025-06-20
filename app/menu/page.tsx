@@ -414,7 +414,7 @@ export default function MenuPage() {
                 </li>
                 <li>
                   <Link href="/#services" className="hover:text-orange transition-colors">
-                    Corporate Catering
+                    Catering Services
                   </Link>
                 </li>
                 <li>

@@ -174,7 +174,7 @@ export function QuoteModal({ isOpen, onClose, defaultService }: QuoteModalProps)
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="individual">Individual Meals</SelectItem>
-                    <SelectItem value="corporate">Corporate Catering</SelectItem>
+                    <SelectItem value="corporate">Catering Services</SelectItem>
                     <SelectItem value="school">School Lunches</SelectItem>
                   </SelectContent>
                 </Select>
@@ -225,7 +225,7 @@ export function QuoteModal({ isOpen, onClose, defaultService }: QuoteModalProps)
 
             {formData.service === "corporate" && (
               <div className="space-y-4">
-                <h3 className="text-lg font-bold text-primary">Corporate Catering Details</h3>
+                <h3 className="text-lg font-bold text-primary">Catering Service Details</h3>
 
                 <div>
                   <Label htmlFor="numberOfPeople">Number of People to be Served *</Label>

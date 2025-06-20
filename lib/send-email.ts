@@ -39,7 +39,7 @@ export async function sendQuoteEmail(formData: FormData) {
     // Format the service name for display
     const serviceNames = {
       individual: "Individual Meals",
-      corporate: "Corporate Catering",
+      corporate: "Catering Services",
       school: "School Lunches",
     }
 

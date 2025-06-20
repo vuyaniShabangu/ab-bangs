@@ -174,7 +174,7 @@ export default function HomePage() {
                 <div className="bg-cream rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                   <Building2 className="h-8 w-8 text-primary" />
                 </div>
-                <h4 className="text-2xl font-bold text-primary mb-4">Corporate Catering</h4>
+                <h4 className="text-2xl font-bold text-primary mb-4">Catering Services</h4>
                 <p className="text-gray-600 mb-6">
                   Energize your team with nutritious catering for meetings, events, and daily office meals. Keep your
                   workforce productive and healthy.
@@ -374,7 +374,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Link href="/menu" className="hover:text-orange transition-colors">
-                    Corporate Catering
+                    Catering Services
                   </Link>
                 </li>
                 <li>
