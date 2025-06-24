@@ -127,7 +127,7 @@ export default function HomePage() {
               </div>
               {/* Floating elements for visual interest */}
               <div className="absolute -top-4 -right-4 bg-orange text-white px-4 py-2 rounded-full font-bold shadow-lg">
-                Farm Fresh!
+                Fresh Ingredients!
               </div>
               <div className="absolute -bottom-4 -left-4 bg-white text-primary px-4 py-2 rounded-full font-bold shadow-lg">
                 Convenient!
@@ -229,7 +229,7 @@ export default function HomePage() {
               </div>
               <h4 className="text-xl font-bold text-primary mb-2">Healthy</h4>
               <p className="text-primary/70">
-                Fresh ingredients sourced directly from local farms for maximum nutrition and flavor.
+                Fresh ingredients sourced directly from local suppliers for maximum nutrition and flavor.
               </p>
             </div>
 

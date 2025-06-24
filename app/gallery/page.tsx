@@ -149,7 +149,7 @@ export default function GalleryPage() {
     },
     {
       src: "/daily-lunches/493407409_1237931885002385_411516908567048758_n.jpg",
-      alt: "Nutritious daily lunch with farm-fresh ingredients",
+      alt: "Nutritious daily lunch with fresh ingredients",
       category: "Daily Lunches",
     },
     {
