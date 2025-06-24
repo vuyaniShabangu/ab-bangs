@@ -6,7 +6,7 @@ import "./globals.css"
 const lexendDeca = Lexend_Deca({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Bang's Kitchen - Farm-to-Table Catering Excellence",
+  title: "Bang's Kitchen - Healthy Catering Excellence",
   description: "Delivering freshly prepared, healthy meals for individuals, corporations, and schools.",
     generator: 'v0.dev'
 }

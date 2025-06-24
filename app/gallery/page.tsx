@@ -416,7 +416,7 @@ export default function GalleryPage() {
           <h1 className="text-5xl font-bold text-primary mb-4">BANG'S KITCHEN</h1>
           <h2 className="text-3xl font-bold text-orange mb-6">Gallery</h2>
           <p className="text-lg text-primary/80 max-w-2xl mx-auto">
-            Explore our delicious creations from farm-to-table catering, daily lunches, kids' meals, and elegant
+            Explore our delicious creations from catering, daily lunches, kids' meals, and elegant
             platters. Every dish is prepared with care and the finest ingredients.
           </p>
         </div>
@@ -533,7 +533,7 @@ export default function GalleryPage() {
                 <Image src="/logo.svg" alt="Bang's Kitchen Logo" width={40} height={40} className="h-10 w-auto" />
               </div>
               <p className="text-white/80">
-                Farm-to-table catering excellence for individuals, corporations, and schools.
+                Catering excellence for individuals, corporations, and schools.
               </p>
             </div>
 

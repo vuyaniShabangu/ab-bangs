@@ -87,7 +87,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
-                Farm-to-Table
+                Healthy
                 <span className="block text-orange">Catering Excellence</span>
               </h2>
               <p className="text-xl text-primary/80 mb-8 max-w-2xl mx-auto lg:mx-0">
@@ -218,7 +218,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-primary mb-4">Why Choose Bang's Kitchen?</h3>
             <p className="text-lg text-primary/80 max-w-2xl mx-auto">
-              We bridge the gap between convenience and wellness with our unique farm-to-table approach.
+              We bridge the gap between convenience and wellness with our unique fresh food approach.
             </p>
           </div>
 
@@ -227,7 +227,7 @@ export default function HomePage() {
               <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
                 <Leaf className="h-8 w-8 text-orange" />
               </div>
-              <h4 className="text-xl font-bold text-primary mb-2">Farm-to-Table</h4>
+              <h4 className="text-xl font-bold text-primary mb-2">Healthy</h4>
               <p className="text-primary/70">
                 Fresh ingredients sourced directly from local farms for maximum nutrition and flavor.
               </p>
@@ -276,7 +276,7 @@ export default function HomePage() {
                 gap between convenience and wellness.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Operating in a competitive landscape, we differentiate ourselves through our farm-to-table approach,
+                Operating in a competitive landscape, we differentiate ourselves through our fresh food approach,
                 emphasis on fresh preparation, and ability to customize solutions for each client's specific needs.
               </p>
               <Button className="bg-orange hover:bg-orange/90 text-white">Learn Our Story</Button>
@@ -360,7 +360,7 @@ export default function HomePage() {
                 <Image src="/logo.svg" alt="Bang's Kitchen Logo" width={40} height={40} className="h-10 w-auto" />
               </div>
               <p className="text-white/80">
-                Farm-to-table catering excellence for individuals, corporations, and schools.
+                Healthy catering excellence for individuals, corporations, and schools.
               </p>
             </div>
 
