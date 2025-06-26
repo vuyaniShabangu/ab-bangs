@@ -390,8 +390,14 @@ export default function GalleryPage() {
             <Link href="/#about" className="text-white hover:text-orange transition-colors">
               About
             </Link>
+            <Link href="/gallery" className="text-white hover:text-orange transition-colors">
+              Gallery
+            </Link>
             <Link href="/#contact" className="text-white hover:text-orange transition-colors">
               Contact
+            </Link>
+            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">
+              Menu
             </Link>
           </nav>
           <Button className="bg-orange hover:bg-orange/90 text-white" onClick={openModal}>
@@ -574,6 +580,11 @@ export default function GalleryPage() {
                 <li>
                   <Link href="/#contact" className="hover:text-orange transition-colors">
                     Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
+                    Menu
                   </Link>
                 </li>
               </ul>

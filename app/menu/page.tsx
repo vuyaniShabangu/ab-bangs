@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, Phone, MessageCircle, Facebook, Instagram } from "lucide-react"
 import { QuoteModal } from "@/components/quote-modal"
+import { KidsMenu } from "@/constants/kidsMenu"
 
 export default function MenuPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -45,6 +46,7 @@ export default function MenuPage() {
             <Link href="/#contact" className="text-white hover:text-orange transition-colors">
               Contact
             </Link>
+            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">Menu</Link>
           </nav>
           <Button className="bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
             Get Quote
@@ -86,16 +88,16 @@ export default function MenuPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="border-b border-cream pb-4">
-                  <h4 className="font-bold text-primary mb-2">MIXED MEAT PLATTER</h4>
+                  <h4 className="font-bold text-primary mb-2">BANG! SPECIAL</h4>
                   <p className="text-gray-600 text-sm mb-2">
                     Chicken wings, meatballs, cocktail sausages, pastries & nuggets
                   </p>
-                  <p className="text-2xl font-bold text-orange">R709</p>
+                  <p className="text-2xl font-bold text-orange">R950</p>
                 </div>
                 <div>
                   <h4 className="font-bold text-primary mb-2">MEATY PLATTER</h4>
                   <p className="text-gray-600 text-sm mb-2">Chicken wings, meatballs, pork ribs, nuggets, wors</p>
-                  <p className="text-2xl font-bold text-orange">R891</p>
+                  <p className="text-2xl font-bold text-orange">R1200</p>
                 </div>
               </CardContent>
             </Card>
@@ -108,11 +110,11 @@ export default function MenuPage() {
                 <div className="border-b border-cream pb-4">
                   <h4 className="font-bold text-primary mb-2">FRUIT PLATTER</h4>
                   <p className="text-gray-600 text-sm mb-2">Selection of seasonal fruit</p>
-                  <p className="text-2xl font-bold text-orange">R450</p>
+                  <p className="text-2xl font-bold text-orange">R650</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary mb-2">CHEESE, CRACKERS & FRESH FRUIT</h4>
-                  <p className="text-2xl font-bold text-orange">R500</p>
+                  <h4 className="font-bold text-primary mb-2">CHEESE, CRACKERS & BILTON</h4>
+                  <p className="text-2xl font-bold text-orange">R650</p>
                 </div>
               </CardContent>
             </Card>
@@ -124,11 +126,11 @@ export default function MenuPage() {
               <CardContent className="space-y-4">
                 <div className="border-b border-cream pb-4">
                   <h4 className="font-bold text-primary mb-2">SANDWICH PLATTER</h4>
-                  <p className="text-2xl font-bold text-orange">R480</p>
+                  <p className="text-2xl font-bold text-orange">R550</p>
                 </div>
                 <div>
                   <h4 className="font-bold text-primary mb-2">CHICKEN WRAP PLATTER</h4>
-                  <p className="text-2xl font-bold text-orange">R580</p>
+                  <p className="text-2xl font-bold text-orange">R680</p>
                 </div>
               </CardContent>
             </Card>
@@ -225,7 +227,7 @@ export default function MenuPage() {
 
           {/* Daily Menu Options */}
           <div className="mb-12">
-            <h4 className="text-2xl font-bold text-primary mb-6 text-center">Daily Menu Options</h4>
+            <h4 className="text-2xl font-bold text-primary mb-6 text-center">Kids Pre-School/Creche Daily Menu Options</h4>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse border border-cream">
                 <thead>
@@ -286,25 +288,25 @@ export default function MenuPage() {
           </div>
 
           {/* Package Options */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="bg-orange text-white">
-                <CardTitle className="text-center">Day Scholar Package</CardTitle>
+                <CardTitle className="text-center">FULL PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Daily:</span>
-                    <span className="text-xl font-bold text-orange">R100</span>
+                    <span className="text-xl font-bold text-orange">R150.00</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Weekly:</span>
-                    <span className="text-xl font-bold text-orange">R300</span>
+                    <span className="text-xl font-bold text-orange">R500.00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-bold">Monthly:</span>
-                    <span className="text-xl font-bold text-orange">R1100</span>
+                    <span className="text-xl font-bold text-orange">R1300.00</span>
                   </div>
                 </div>
                 <Button
@@ -318,22 +320,51 @@ export default function MenuPage() {
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="bg-primary text-white">
-                <CardTitle className="text-center">Hostel & Aftercare Package</CardTitle>
-                <p className="text-center text-sm">Meal + Fruit + Water/Chips</p>
+                <CardTitle className="text-center">PRE-SCHOOL/ CRECHE PACKAGE</CardTitle>
+                <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Daily:</span>
-                    <span className="text-xl font-bold text-orange">R85</span>
+                    <span className="text-xl font-bold text-orange">R120.00</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Weekly:</span>
-                    <span className="text-xl font-bold text-orange">R200</span>
+                    <span className="text-xl font-bold text-orange">R400.00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-bold">Monthly:</span>
-                    <span className="text-xl font-bold text-orange">R700</span>
+                    <span className="text-xl font-bold text-orange"> R1100.00</span>
+                  </div>
+                </div>
+                <Button
+                  className="w-full mt-4 bg-primary hover:bg-primary/90 text-white"
+                  onClick={() => openModal("school")}
+                >
+                  Get Quote
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader className="bg-primary text-white">
+                <CardTitle className="text-center">BUDGET / AFTERCARE PACKAGE</CardTitle>
+                <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center border-b border-cream pb-2">
+                    <span className="font-bold">Daily:</span>
+                    <span className="text-xl font-bold text-orange">R100.00</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-cream pb-2">
+                    <span className="font-bold">Weekly:</span>
+                    <span className="text-xl font-bold text-orange">R350.00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold">Monthly:</span>
+                    <span className="text-xl font-bold text-orange"> R900.00</span>
                   </div>
                 </div>
                 <Button
@@ -345,8 +376,20 @@ export default function MenuPage() {
               </CardContent>
             </Card>
           </div>
+
+          <div className="mt-20">
+            <h1 className="text-2xl font-bold text-primary mb-6 text-center">Kids Lunch Menu</h1>
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1">
+            {KidsMenu.map((menu, index) => (
+                <Card className="h-20 flex flex-col justify-center items-center p-2 mb-1 hover:shadow-md">
+                  <h1 className="text-center">{menu}</h1>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/* Contact Information */}
       <section className="bg-primary py-16">
@@ -441,6 +484,11 @@ export default function MenuPage() {
                 <li>
                   <Link href="/#contact" className="hover:text-orange transition-colors">
                     Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
+                    Menu
                   </Link>
                 </li>
               </ul>

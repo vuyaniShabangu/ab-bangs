@@ -74,6 +74,7 @@ export default function HomePage() {
             >
               Contact
             </button>
+            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">Menu</Link>
           </nav>
           <Button className="bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
             Get Quote
@@ -411,6 +412,11 @@ export default function HomePage() {
                   >
                     Contact
                   </button>
+                </li>
+                <li>
+                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
+                    Menu
+                  </Link>
                 </li>
               </ul>
             </div>
