@@ -68,6 +68,7 @@ export default function HomePage() {
             <Link href="/gallery" className="text-white hover:text-orange transition-colors">
               Gallery
             </Link>
+            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">Menu</Link>
             <button
               onClick={() => scrollToSection("contact")}
               className="text-white hover:text-orange transition-colors cursor-pointer"
@@ -403,6 +404,11 @@ export default function HomePage() {
                   >
                     Our Story
                   </button>
+                </li>
+                <li>
+                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
+                    Menu
+                  </Link>
                 </li>
                 <li>
                   <button
