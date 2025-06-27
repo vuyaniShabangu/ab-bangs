@@ -320,7 +320,7 @@ export default function MenuPage() {
             </Card>
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0">
+              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center">
                 <CardTitle className="text-center pb-2">PRE-SCHOOL/ CRECHE PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
                 <p className="text-center text-sm">*See menu options below</p>
@@ -350,7 +350,7 @@ export default function MenuPage() {
             </Card>
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0">
+              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center">
                 <CardTitle className="text-center  pb-2">BUDGET / AFTERCARE PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
                 <p className="text-center text-sm">*See menu options below</p>
