@@ -578,13 +578,13 @@ export default function GalleryPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="hover:text-orange transition-colors">
-                    Contact
+                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
+                    Menu
                   </Link>
                 </li>
                 <li>
-                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
-                    Menu
+                  <Link href="/#contact" className="hover:text-orange transition-colors">
+                    Contact
                   </Link>
                 </li>
               </ul>

@@ -43,10 +43,10 @@ export default function MenuPage() {
             <Link href="/gallery" className="text-white hover:text-orange transition-colors">
               Gallery
             </Link>
+            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">Menu</Link>
             <Link href="/#contact" className="text-white hover:text-orange transition-colors">
               Contact
             </Link>
-            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">Menu</Link>
           </nav>
           <Button className="bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
             Get Quote
@@ -290,9 +290,10 @@ export default function MenuPage() {
           {/* Package Options */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="bg-orange text-white">
-                <CardTitle className="text-center">FULL PACKAGE</CardTitle>
+              <CardHeader className="flex items-center bg-orange text-white min-h-32 space-y-0 justify-center">
+                <CardTitle className="text-center pb-2">FULL PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
+                <p className="text-center text-sm">*See menu options below</p>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-3">
@@ -319,9 +320,10 @@ export default function MenuPage() {
             </Card>
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="bg-primary text-white">
-                <CardTitle className="text-center">PRE-SCHOOL/ CRECHE PACKAGE</CardTitle>
+              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0">
+                <CardTitle className="text-center pb-2">PRE-SCHOOL/ CRECHE PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
+                <p className="text-center text-sm">*See menu options below</p>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-3">
@@ -348,9 +350,10 @@ export default function MenuPage() {
             </Card>
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="bg-primary text-white">
-                <CardTitle className="text-center">BUDGET / AFTERCARE PACKAGE</CardTitle>
+              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0">
+                <CardTitle className="text-center  pb-2">BUDGET / AFTERCARE PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
+                <p className="text-center text-sm">*See menu options below</p>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-3">
@@ -482,13 +485,13 @@ export default function MenuPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="hover:text-orange transition-colors">
-                    Contact
+                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
+                    Menu
                   </Link>
                 </li>
                 <li>
-                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
-                    Menu
+                  <Link href="/#contact" className="hover:text-orange transition-colors">
+                    Contact
                   </Link>
                 </li>
               </ul>

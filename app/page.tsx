@@ -68,13 +68,13 @@ export default function HomePage() {
             <Link href="/gallery" className="text-white hover:text-orange transition-colors">
               Gallery
             </Link>
+            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">Menu</Link>
             <button
               onClick={() => scrollToSection("contact")}
               className="text-white hover:text-orange transition-colors cursor-pointer"
             >
               Contact
             </button>
-            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">Menu</Link>
           </nav>
           <Button className="bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
             Get Quote
@@ -406,17 +406,17 @@ export default function HomePage() {
                   </button>
                 </li>
                 <li>
+                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
+                    Menu
+                  </Link>
+                </li>
+                <li>
                   <button
                     onClick={() => scrollToSection("contact")}
                     className="hover:text-orange transition-colors cursor-pointer"
                   >
                     Contact
                   </button>
-                </li>
-                <li>
-                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
-                    Menu
-                  </Link>
                 </li>
               </ul>
             </div>

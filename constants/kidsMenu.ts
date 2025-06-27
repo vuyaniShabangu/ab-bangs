@@ -3,7 +3,7 @@ export const KidsMenu = [
     "Grilled/fried hake and Chips",
     "Chicken wrap",
     "Mince Wrap",
-    "paghetti and Mince",
+    "Spaghetti and Mince",
     "Pasta and Meatballs",
     "Hotdogs", "Mac and cheese",
     "Creamy chicken pasta",
