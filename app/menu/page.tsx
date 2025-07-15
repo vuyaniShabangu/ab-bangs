@@ -76,75 +76,13 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Platter Menu */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold text-primary text-center mb-12">PLATTER MENU</h3>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">MEAT PLATTERS</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="border-b border-cream pb-4">
-                  <h4 className="font-bold text-primary mb-2">BANG! SPECIAL</h4>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Chicken wings, meatballs, cocktail sausages, pastries & nuggets
-                  </p>
-                  <p className="text-2xl font-bold text-orange">R950</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary mb-2">MEATY PLATTER</h4>
-                  <p className="text-gray-600 text-sm mb-2">Chicken wings, meatballs, pork ribs, nuggets, wors</p>
-                  <p className="text-2xl font-bold text-orange">R1200</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">FRESH OPTIONS</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="border-b border-cream pb-4">
-                  <h4 className="font-bold text-primary mb-2">FRUIT PLATTER</h4>
-                  <p className="text-gray-600 text-sm mb-2">Selection of seasonal fruit</p>
-                  <p className="text-2xl font-bold text-orange">R650</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary mb-2">CHEESE, CRACKERS & BILTON</h4>
-                  <p className="text-2xl font-bold text-orange">R650</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">WRAPS & SANDWICHES</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="border-b border-cream pb-4">
-                  <h4 className="font-bold text-primary mb-2">SANDWICH PLATTER</h4>
-                  <p className="text-2xl font-bold text-orange">R550</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary mb-2">CHICKEN WRAP PLATTER</h4>
-                  <p className="text-2xl font-bold text-orange">R680</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Daily Meals */}
-      <section className="bg-cream py-16">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold text-primary text-center mb-12">DAILY MEALS</h3>
           <p className="text-center text-lg text-gray-700 mb-6">1 Protein served with 3 sides (subject to availability).</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <Card className="border-2" style={{ borderColor: '#39564a' }} className="hover:border-orange transition-colors">
+            <Card className="border-2 hover:border-orange transition-colors" style={{ borderColor: '#39564a' }}>
               <CardHeader>
                 <CardTitle className="text-xl text-primary">PROTEINS</CardTitle>
               </CardHeader>
@@ -171,7 +109,7 @@ export default function MenuPage() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-2" style={{ borderColor: '#39564a' }} className="hover:border-orange transition-colors md:col-span-2 lg:col-span-2">
+            <Card className="border-2 hover:border-orange transition-colors md:col-span-2 lg:col-span-2" style={{ borderColor: '#39564a' }}>
               <CardHeader>
                 <CardTitle className="text-xl text-primary">SIDES <span className="text-orange">@R18.00 each</span></CardTitle>
               </CardHeader>
@@ -197,90 +135,12 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Catering Services */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold text-primary text-center mb-12">CATERING SERVICES</h3>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="bg-primary text-white rounded-t-md">
-                <CardTitle className="text-center">WEDDING & EVENTS</CardTitle>
-                <p className="text-center text-3xl font-bold text-orange">R355 P/P</p>
-              </CardHeader>
-              <CardContent className="p-6">
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Welcome drinks + starter table</li>
-                  <li>• 3 Starch options</li>
-                  <li>• 3 Protein options</li>
-                  <li>• 3 Vegetable options</li>
-                  <li>• 3 Salad options</li>
-                  <li>• Dessert (2 varieties)</li>
-                </ul>
-                <Button
-                  className="w-full mt-4 bg-orange hover:bg-orange/90 text-white"
-                  onClick={() => openModal("corporate")}
-                >
-                  Get Quote
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="bg-primary text-white rounded-t-md">
-                <CardTitle className="text-center">GOV & CORPORATE</CardTitle>
-                <p className="text-center text-3xl font-bold text-orange">R160 P/P</p>
-              </CardHeader>
-              <CardContent className="p-6">
-                <h4 className="font-bold text-primary mb-3">LUNCH</h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• 2 Starch options</li>
-                  <li>• 2 Protein options</li>
-                  <li>• 2 Vegetable options</li>
-                  <li>• 2 Salad options</li>
-                  <li>• Assorted soft drinks</li>
-                </ul>
-                <Button
-                  className="w-full mt-4 bg-orange hover:bg-orange/90 text-white"
-                  onClick={() => openModal("corporate")}
-                >
-                  Get Quote
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="bg-primary text-white rounded-t-md">
-                <CardTitle className="text-center">PRE PACKED MEALS</CardTitle>
-                <p className="text-center text-3xl font-bold text-orange">R110 P/P</p>
-              </CardHeader>
-              <CardContent className="p-6">
-                <h4 className="font-bold text-primary mb-3">TAKE-AWAY</h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• 1 Starch option</li>
-                  <li>• 1 Protein option</li>
-                  <li>• 1 Vegetable option</li>
-                  <li>• 1 Salad option</li>
-                  <li>• Assorted soft drinks</li>
-                </ul>
-                <Button
-                  className="w-full mt-4 bg-orange hover:bg-orange/90 text-white"
-                  onClick={() => openModal("individual")}
-                >
-                  Get Quote
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Kids Lunchbox Packages */}
       <section className="bg-cream py-16">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold text-primary text-center mb-8">KIDS LUNCHBOX PACKAGES</h3>
           <p className="text-center text-lg text-gray-600 mb-4">
-            "All meals can either be delivered at home before school or at school"
+            "All meals delivered to school or collected"
           </p>
           <p className="text-center text-sm text-orange font-bold mb-12">NB: Local schools only</p>
 
@@ -452,6 +312,145 @@ export default function MenuPage() {
         </div>
       </section>
 
+      {/* Platter Menu */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold text-primary text-center mb-12">PLATTER MENU</h3>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader>
+                <CardTitle className="text-xl text-primary">MEAT PLATTERS</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="border-b border-cream pb-4">
+                  <h4 className="font-bold text-primary mb-2">BANG! SPECIAL</h4>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Chicken wings, meatballs, cocktail sausages, pastries & nuggets
+                  </p>
+                  <p className="text-2xl font-bold text-orange">R950</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-primary mb-2">MEATY PLATTER</h4>
+                  <p className="text-gray-600 text-sm mb-2">Chicken wings, meatballs, pork ribs, nuggets, wors</p>
+                  <p className="text-2xl font-bold text-orange">R1200</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader>
+                <CardTitle className="text-xl text-primary">FRESH OPTIONS</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="border-b border-cream pb-4">
+                  <h4 className="font-bold text-primary mb-2">FRUIT PLATTER</h4>
+                  <p className="text-gray-600 text-sm mb-2">Selection of seasonal fruit</p>
+                  <p className="text-2xl font-bold text-orange">R650</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-primary mb-2">CHEESE, CRACKERS & BILTON</h4>
+                  <p className="text-2xl font-bold text-orange">R650</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader>
+                <CardTitle className="text-xl text-primary">WRAPS & SANDWICHES</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="border-b border-cream pb-4">
+                  <h4 className="font-bold text-primary mb-2">SANDWICH PLATTER</h4>
+                  <p className="text-2xl font-bold text-orange">R550</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-primary mb-2">CHICKEN WRAP PLATTER</h4>
+                  <p className="text-2xl font-bold text-orange">R680</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Catering Services */}
+      <section className="py-16" style={{ backgroundColor: '#f1e1d3' }}>
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold text-primary text-center mb-12">CATERING SERVICES</h3>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader className="bg-primary text-white rounded-t-md">
+                <CardTitle className="text-center">WEDDING & EVENTS</CardTitle>
+                <p className="text-center text-3xl font-bold text-orange">R355 P/P</p>
+              </CardHeader>
+              <CardContent className="p-6">
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Welcome drinks + starter table</li>
+                  <li>• 3 Starch options</li>
+                  <li>• 3 Protein options</li>
+                  <li>• 3 Vegetable options</li>
+                  <li>• 3 Salad options</li>
+                  <li>• Dessert (2 varieties)</li>
+                </ul>
+                <Button
+                  className="w-full mt-4 bg-orange hover:bg-orange/90 text-white"
+                  onClick={() => openModal("corporate")}
+                >
+                  Get Quote
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader className="bg-primary text-white rounded-t-md">
+                <CardTitle className="text-center">GOV & CORPORATE</CardTitle>
+                <p className="text-center text-3xl font-bold text-orange">R160 P/P</p>
+              </CardHeader>
+              <CardContent className="p-6">
+                <h4 className="font-bold text-primary mb-3">LUNCH</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• 2 Starch options</li>
+                  <li>• 2 Protein options</li>
+                  <li>• 2 Vegetable options</li>
+                  <li>• 2 Salad options</li>
+                  <li>• Assorted soft drinks</li>
+                </ul>
+                <Button
+                  className="w-full mt-4 bg-orange hover:bg-orange/90 text-white"
+                  onClick={() => openModal("corporate")}
+                >
+                  Get Quote
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader className="bg-primary text-white rounded-t-md">
+                <CardTitle className="text-center">PRE PACKED MEALS</CardTitle>
+                <p className="text-center text-3xl font-bold text-orange">R110 P/P</p>
+              </CardHeader>
+              <CardContent className="p-6">
+                <h4 className="font-bold text-primary mb-3">TAKE-AWAY</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• 1 Starch option</li>
+                  <li>• 1 Protein option</li>
+                  <li>• 1 Vegetable option</li>
+                  <li>• 1 Salad option</li>
+                  <li>• Assorted soft drinks</li>
+                </ul>
+                <Button
+                  className="w-full mt-4 bg-orange hover:bg-orange/90 text-white"
+                  onClick={() => openModal("individual")}
+                >
+                  Get Quote
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
 
       {/* Contact Information */}
       <section className="bg-primary py-16">
