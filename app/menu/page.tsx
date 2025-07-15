@@ -138,14 +138,73 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Catering Services */}
+      {/* Daily Meals */}
       <section className="bg-cream py-16">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold text-primary text-center mb-12">DAILY MEALS</h3>
+          <p className="text-center text-lg text-gray-700 mb-6">1 Protein served with 3 sides (subject to availability).</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <Card className="border-2" style={{ borderColor: '#39564a' }} className="hover:border-orange transition-colors">
+              <CardHeader>
+                <CardTitle className="text-xl text-primary">PROTEINS</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex justify-between items-center border-b border-cream pb-2">
+                  <span className="font-bold">Sirloin steak</span>
+                  <span className="text-orange font-bold">R105.00</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-cream pb-2">
+                  <span className="font-bold">Mutton Chops</span>
+                  <span className="text-orange font-bold">R115.00</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-cream pb-2">
+                  <span className="font-bold">Chicken Wings</span>
+                  <span className="text-orange font-bold">R90.00</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-cream pb-2">
+                  <span className="font-bold">Hake</span>
+                  <span className="text-orange font-bold">R75.00</span>
+                </div>
+                <div className="flex flex-col items-center mt-4">
+                  <span className="font-bold text-primary">Combo Meal</span>
+                  <span className="text-sm text-gray-600">(x2 R160 proteins + sides)</span>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-2" style={{ borderColor: '#39564a' }} className="hover:border-orange transition-colors md:col-span-2 lg:col-span-2">
+              <CardHeader>
+                <CardTitle className="text-xl text-primary">SIDES <span className="text-orange">@R18.00 each</span></CardTitle>
+              </CardHeader>
+              <CardContent className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                <span>1. Potatoes and mushrooms</span>
+                <span>2. Green salad</span>
+                <span>3. Sweet carrots</span>
+                <span>4. Broccoli</span>
+                <span>5. Cauliflower</span>
+                <span>6. Slaw</span>
+                <span>7. Butternut</span>
+                <span>8. Creamed spinach</span>
+                <span>9. Potato Bake</span>
+                <span>10. Seasonal Veg Bake</span>
+                <span>11. Mash potatoes</span>
+                <span>12. Chips</span>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="flex justify-center">
+            <Button className="bg-orange hover:bg-orange/90 text-white px-8 py-3" onClick={() => openModal("daily")}>Get Daily Meal Quote</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Catering Services */}
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold text-primary text-center mb-12">CATERING SERVICES</h3>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-2 border-white hover:border-orange transition-colors">
-              <CardHeader className="bg-primary text-white">
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader className="bg-primary text-white rounded-t-md">
                 <CardTitle className="text-center">WEDDING & EVENTS</CardTitle>
                 <p className="text-center text-3xl font-bold text-orange">R355 P/P</p>
               </CardHeader>
@@ -167,8 +226,8 @@ export default function MenuPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-white hover:border-orange transition-colors">
-              <CardHeader className="bg-primary text-white">
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader className="bg-primary text-white rounded-t-md">
                 <CardTitle className="text-center">GOV & CORPORATE</CardTitle>
                 <p className="text-center text-3xl font-bold text-orange">R160 P/P</p>
               </CardHeader>
@@ -190,8 +249,8 @@ export default function MenuPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-white hover:border-orange transition-colors">
-              <CardHeader className="bg-primary text-white">
+            <Card className="border-2 border-cream hover:border-orange transition-colors">
+              <CardHeader className="bg-primary text-white rounded-t-md">
                 <CardTitle className="text-center">PRE PACKED MEALS</CardTitle>
                 <p className="text-center text-3xl font-bold text-orange">R110 P/P</p>
               </CardHeader>
@@ -217,7 +276,7 @@ export default function MenuPage() {
       </section>
 
       {/* Kids Lunchbox Packages */}
-      <section className="py-16">
+      <section className="bg-cream py-16">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold text-primary text-center mb-8">KIDS LUNCHBOX PACKAGES</h3>
           <p className="text-center text-lg text-gray-600 mb-4">
@@ -228,9 +287,9 @@ export default function MenuPage() {
           {/* Daily Menu Options */}
           <div className="mb-12">
             <h4 className="text-2xl font-bold text-primary mb-6 text-center">Kids Pre-School/Creche Daily Menu Options</h4>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto ">
               <table className="w-full border-collapse border border-cream">
-                <thead>
+                <thead className="rounded-t-md">
                   <tr className="bg-primary text-white">
                     <th className="border border-cream p-3 text-left">Day</th>
                     <th className="border border-cream p-3 text-left">Lunch</th>
@@ -239,7 +298,7 @@ export default function MenuPage() {
                     <th className="border border-cream p-3 text-left">Drink</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="bg-white">
                   <tr className="hover:bg-cream/50">
                     <td className="border border-cream p-3 font-bold">01</td>
                     <td className="border border-cream p-3">Rice & Chicken Drumsticks</td>
@@ -290,7 +349,7 @@ export default function MenuPage() {
           {/* Package Options */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="flex items-center bg-orange text-white min-h-32 space-y-0 justify-center">
+              <CardHeader className="flex items-center bg-orange text-white min-h-32 space-y-0 justify-center rounded-t-md">
                 <CardTitle className="text-center pb-2">FULL PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
                 <p className="text-center text-sm">*See menu options below</p>
@@ -320,7 +379,7 @@ export default function MenuPage() {
             </Card>
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center">
+              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center rounded-t-md">
                 <CardTitle className="text-center pb-2">PRE-SCHOOL/ CRECHE PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
                 <p className="text-center text-sm">*See menu options below</p>
@@ -350,7 +409,7 @@ export default function MenuPage() {
             </Card>
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center">
+              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center rounded-t-md">
                 <CardTitle className="text-center  pb-2">BUDGET / AFTERCARE PACKAGE</CardTitle>
                 <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
                 <p className="text-center text-sm">*See menu options below</p>
