@@ -222,11 +222,11 @@ export default function MenuPage() {
                   </div>
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Weekly:</span>
-                    <span className="text-xl font-bold text-orange">R500.00</span>
+                    <span className="text-xl font-bold text-orange">R400.00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-bold">Monthly:</span>
-                    <span className="text-xl font-bold text-orange">R1300.00</span>
+                    <span className="text-xl font-bold text-orange">R1200.00</span>
                   </div>
                 </div>
                 <Button
@@ -252,11 +252,11 @@ export default function MenuPage() {
                   </div>
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Weekly:</span>
-                    <span className="text-xl font-bold text-orange">R400.00</span>
+                    <span className="text-xl font-bold text-orange">R350.00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-bold">Monthly:</span>
-                    <span className="text-xl font-bold text-orange"> R1100.00</span>
+                    <span className="text-xl font-bold text-orange"> R800.00</span>
                   </div>
                 </div>
                 <Button
@@ -328,12 +328,12 @@ export default function MenuPage() {
                   <p className="text-gray-600 text-sm mb-2">
                     Chicken wings, meatballs, cocktail sausages, pastries & nuggets
                   </p>
-                  <p className="text-2xl font-bold text-orange">R950</p>
+                  <p className="text-2xl font-bold text-orange">R800</p>
                 </div>
                 <div>
                   <h4 className="font-bold text-primary mb-2">MEATY PLATTER</h4>
                   <p className="text-gray-600 text-sm mb-2">Chicken wings, meatballs, pork ribs, nuggets, wors</p>
-                  <p className="text-2xl font-bold text-orange">R1200</p>
+                  <p className="text-2xl font-bold text-orange">R950</p>
                 </div>
               </CardContent>
             </Card>
