@@ -271,7 +271,7 @@ export default function MenuPage() {
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center rounded-t-md">
                 <CardTitle className="text-center  pb-2">BUDGET / AFTERCARE PACKAGE</CardTitle>
-                <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
+                <p className="text-center text-sm">Meal + Fruit + Water</p>
                 <p className="text-center text-sm">*See menu options below</p>
               </CardHeader>
               <CardContent className="p-6">
