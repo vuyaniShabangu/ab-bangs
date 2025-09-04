@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -12,6 +13,7 @@ import { KidsMenu } from "@/constants/kidsMenu"
 export default function MenuPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [defaultService, setDefaultService] = useState<string>("")
+  const searchParams = useSearchParams()
 
   const openModal = (service?: string) => {
     setDefaultService(service || "")
@@ -22,6 +24,26 @@ export default function MenuPage() {
     setIsModalOpen(false)
     setDefaultService("")
   }
+
+  // Check for URL parameters on component mount
+  useEffect(() => {
+    const quoteParam = searchParams.get('quote')
+    if (quoteParam === 'school-lunch') {
+      // Open modal with school lunches pre-selected
+      openModal('school')
+      
+      // Scroll to kids-lunches section after a short delay to ensure modal is rendered
+      setTimeout(() => {
+        const kidsLunchesSection = document.getElementById('kids-lunches')
+        if (kidsLunchesSection) {
+          kidsLunchesSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
+      }, 100)
+    }
+  }, [searchParams])
 
   return (
     <div className="min-h-screen bg-white">
@@ -136,7 +158,7 @@ export default function MenuPage() {
       </section>
 
       {/* Kids Lunchbox Packages */}
-      <section className="bg-cream py-16">
+      <section id="kids-lunches" className="bg-cream py-16">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold text-primary text-center mb-8">KIDS LUNCHBOX PACKAGES</h3>
           <p className="text-center text-lg text-gray-600 mb-4">

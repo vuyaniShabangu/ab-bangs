@@ -25,6 +25,118 @@ export default function GalleryPage() {
   // Gallery images organized by category
   const galleryImages: GalleryImage[] = [
     // Catering images
+    // Catering - GQ Baptism event (add matching images to public/catering)
+    {
+      src: "/catering/gq-baptism-01.jpeg",
+      alt: "Catering staff serving beetroot salad at baptism event",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-02.jpeg",
+      alt: "Catering team plating fresh green salad",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-03.jpeg",
+      alt: "Kitchen team ready for service in aprons",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-04.jpeg",
+      alt: "Catering duo smiling before service",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-05.jpeg",
+      alt: "Playful pose from catering staff member",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-06.jpeg",
+      alt: "Caterer holding stack of takeaway bowls in kitchen",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-07.jpeg",
+      alt: "Buffet station with vegetable medley and chafing dishes",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-08.jpeg",
+      alt: "Golden chafing dishes with braised beef at buffet",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-09.jpeg",
+      alt: "Guest serving meat from chafing dishes",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-10.jpeg",
+      alt: "Salads and sides arranged at buffet start",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-11.jpeg",
+      alt: "Guests queuing at buffet with gold chafers",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-12.jpeg",
+      alt: "Caterer greeting guest at event",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-13.jpeg",
+      alt: "Guest plating food near salads and sides",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-14.jpeg",
+      alt: "Guests selecting items at buffet spread",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-15.jpeg",
+      alt: "Guests seated enjoying plated meals at decorated table",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-16.jpeg",
+      alt: "Man serving from buffet beside beetroot salad bowl",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-17.jpeg",
+      alt: "Long table setting with guests dining",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-18.jpeg",
+      alt: "Woman in black dress plating from buffet",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-19.jpeg",
+      alt: "Elderly guests enjoying plated meals",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-20.jpeg",
+      alt: "Ladies in line with plates at buffet",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-21.jpeg",
+      alt: "Guest in white dress serving from buffet",
+      category: "Catering",
+    },
+    {
+      src: "/catering/gq-baptism-22.jpeg",
+      alt: "Smiling guest holding full plate at buffet",
+      category: "Catering",
+    },
+    
     {
       src: "/catering/berry-dessert-closeup.jpg",
       alt: "Elegant berry dessert with fresh berries and cream - Bang's Kitchen catering",
