@@ -230,7 +230,7 @@ export function MenuContent() {
           </div>
 
           {/* Package Options */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="flex items-center bg-orange text-white min-h-32 space-y-0 justify-center rounded-t-md">
                 <CardTitle className="text-center pb-2">FULL PACKAGE</CardTitle>
@@ -250,36 +250,6 @@ export function MenuContent() {
                   <div className="flex justify-between items-center">
                     <span className="font-bold">Monthly:</span>
                     <span className="text-xl font-bold text-orange">R1200.00</span>
-                  </div>
-                </div>
-                <Button
-                  className="w-full mt-4 bg-primary hover:bg-primary/90 text-white"
-                  onClick={() => openModal("school")}
-                >
-                  Get Quote
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-cream hover:border-orange transition-colors">
-              <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center rounded-t-md">
-                <CardTitle className="text-center pb-2">PRE-SCHOOL/ CRECHE PACKAGE</CardTitle>
-                <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
-                <p className="text-center text-sm">*See menu options below</p>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center border-b border-cream pb-2">
-                    <span className="font-bold">Daily:</span>
-                    <span className="text-xl font-bold text-orange">R120.00</span>
-                  </div>
-                  <div className="flex justify-between items-center border-b border-cream pb-2">
-                    <span className="font-bold">Weekly:</span>
-                    <span className="text-xl font-bold text-orange">R350.00</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-bold">Monthly:</span>
-                    <span className="text-xl font-bold text-orange"> R800.00</span>
                   </div>
                 </div>
                 <Button
