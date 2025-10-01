@@ -306,7 +306,7 @@ export function MenuContent() {
       </section>
 
       {/* Platter Menu */}
-      <section className="py-16">
+      <section id="platters" className="py-16">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold text-primary text-center mb-12">PLATTER MENU</h3>
 
