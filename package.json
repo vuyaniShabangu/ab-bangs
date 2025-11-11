@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "next build && npm run postbuild",
+    "postbuild": "cp public/.htaccess out/.htaccess && touch out/.nojekyll",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "serve": "npx serve out -p 3000",
+    "test:build": "npm run build && npm run serve"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "latest",
