@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Menu, X } from "lucide-react"
+import { ArrowLeft, Menu, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { QuoteModal } from "@/components/quote-modal"
 
 type GalleryTag = "All" | "Catering" | "Daily Lunches" | "Kids Lunches" | "Platters"
@@ -19,9 +19,34 @@ export default function GalleryPage() {
   const [activeTag, setActiveTag] = useState<GalleryTag>("All")
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
 
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
+
+  // Open image modal
+  const openImageModal = (index: number) => {
+    setSelectedImageIndex(index)
+  }
+
+  // Close image modal
+  const closeImageModal = () => {
+    setSelectedImageIndex(null)
+  }
+
+  // Navigate to previous image
+  const goToPrevious = (currentIndex: number) => {
+    if (currentIndex > 0) {
+      setSelectedImageIndex(currentIndex - 1)
+    }
+  }
+
+  // Navigate to next image
+  const goToNext = (currentIndex: number, maxLength: number) => {
+    if (currentIndex < maxLength - 1) {
+      setSelectedImageIndex(currentIndex + 1)
+    }
+  }
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -30,7 +55,7 @@ export default function GalleryPage() {
 
   // Close mobile menu and prevent body scroll when open
   useEffect(() => {
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen || selectedImageIndex !== null) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "unset"
@@ -38,7 +63,7 @@ export default function GalleryPage() {
     return () => {
       document.body.style.overflow = "unset"
     }
-  }, [isMobileMenuOpen])
+  }, [isMobileMenuOpen, selectedImageIndex])
 
   // Gallery images organized by category
   const galleryImages: GalleryImage[] = [
@@ -503,6 +528,26 @@ export default function GalleryPage() {
 
   const tags: GalleryTag[] = ["All", "Catering", "Daily Lunches", "Kids Lunches", "Platters"]
 
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImageIndex === null) return
+
+      if (e.key === "Escape") {
+        closeImageModal()
+      } else if (e.key === "ArrowLeft") {
+        goToPrevious(selectedImageIndex)
+      } else if (e.key === "ArrowRight") {
+        goToNext(selectedImageIndex, filteredImages.length)
+      }
+    }
+
+    if (selectedImageIndex !== null) {
+      window.addEventListener("keydown", handleKeyDown)
+    }
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [selectedImageIndex, filteredImages.length])
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -665,7 +710,8 @@ export default function GalleryPage() {
             {filteredImages.map((image, index) => (
               <div
                 key={`${image.src}-${index}`}
-                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                onClick={() => openImageModal(index)}
               >
                 <div className="aspect-square relative">
                   <Image
@@ -811,6 +857,80 @@ export default function GalleryPage() {
           </div>
         </div>
       </footer>
+
+      {/* Image Modal */}
+      {selectedImageIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+          onClick={closeImageModal}
+        >
+          <button
+            className="absolute top-4 right-4 text-white hover:text-orange transition-colors z-10"
+            onClick={closeImageModal}
+            aria-label="Close modal"
+          >
+            <X className="h-8 w-8" />
+          </button>
+
+          {/* Previous Button */}
+          {selectedImageIndex > 0 && (
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-orange transition-colors z-10 bg-black/50 rounded-full p-2"
+              onClick={(e) => {
+                e.stopPropagation()
+                goToPrevious(selectedImageIndex)
+              }}
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </button>
+          )}
+
+          {/* Next Button */}
+          {selectedImageIndex < filteredImages.length - 1 && (
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-orange transition-colors z-10 bg-black/50 rounded-full p-2"
+              onClick={(e) => {
+                e.stopPropagation()
+                goToNext(selectedImageIndex, filteredImages.length)
+              }}
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-8 w-8" />
+            </button>
+          )}
+
+          {/* Image Container */}
+          <div
+            className="relative max-w-7xl max-h-[90vh] w-full h-full flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src={filteredImages[selectedImageIndex].src || "/placeholder.svg"}
+                alt={filteredImages[selectedImageIndex].alt}
+                width={1200}
+                height={800}
+                className="object-contain max-h-[80vh] w-auto h-auto"
+                priority
+              />
+            </div>
+
+            {/* Image Info */}
+            <div className="mt-4 text-center text-white max-w-3xl">
+              <div className="mb-2">
+                <span className="bg-orange text-white px-3 py-1 rounded-full text-sm font-medium">
+                  {filteredImages[selectedImageIndex].category}
+                </span>
+              </div>
+              <p className="text-lg">{filteredImages[selectedImageIndex].alt}</p>
+              <p className="text-sm text-white/70 mt-2">
+                {selectedImageIndex + 1} / {filteredImages.length}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Quote Modal */}
       <QuoteModal isOpen={isModalOpen} onClose={closeModal} />
