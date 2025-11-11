@@ -6,12 +6,13 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Users, Building2, GraduationCap, Leaf, Clock, Heart, ChefHat, Phone, Mail, MapPin } from "lucide-react"
+import { Users, Building2, GraduationCap, Leaf, Clock, Heart, ChefHat, Phone, Mail, MapPin, Menu, X } from "lucide-react"
 import { QuoteModal } from "@/components/quote-modal"
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [defaultService, setDefaultService] = useState<string>("")
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const openModal = (service?: string) => {
     setDefaultService(service || "")
@@ -34,7 +35,25 @@ export default function HomePage() {
         behavior: "smooth",
       })
     }
+    setIsMobileMenuOpen(false) // Close mobile menu after navigation
   }
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isMobileMenuOpen])
 
   // Add smooth scrolling CSS
   useEffect(() => {
@@ -76,10 +95,79 @@ export default function HomePage() {
               Contact
             </button>
           </nav>
-          <Button className="bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
-            Get Quote
-          </Button>
+          <div className="flex items-center gap-4">
+            <Button className="hidden md:block bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
+              Get Quote
+            </Button>
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden text-white hover:text-orange transition-colors"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden fixed inset-0 top-[73px] bg-primary z-30 transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <nav className="flex flex-col p-6 space-y-6">
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-white hover:text-orange transition-colors text-left text-lg font-medium"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-white hover:text-orange transition-colors text-left text-lg font-medium"
+            >
+              About
+            </button>
+            <Link
+              href="/gallery"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Gallery
+            </Link>
+            <Link
+              href="/menu"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Menu
+            </Link>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-white hover:text-orange transition-colors text-left text-lg font-medium"
+            >
+              Contact
+            </button>
+            <Button
+              className="bg-orange hover:bg-orange/90 text-white w-full"
+              onClick={() => {
+                openModal()
+                setIsMobileMenuOpen(false)
+              }}
+            >
+              Get Quote
+            </Button>
+          </nav>
+        </div>
+
+        {/* Overlay */}
+        {isMobileMenuOpen && (
+          <div
+            className="md:hidden fixed inset-0 bg-black/50 z-20"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
       </header>
 
       {/* Hero Section */}

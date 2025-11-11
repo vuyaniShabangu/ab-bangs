@@ -6,13 +6,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, Phone, MessageCircle, Facebook, Instagram } from "lucide-react"
+import { ArrowLeft, Phone, MessageCircle, Facebook, Instagram, Menu, X } from "lucide-react"
 import { QuoteModal } from "@/components/quote-modal"
 import { KidsMenu } from "@/constants/kidsMenu"
 
 export function MenuContent() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [defaultService, setDefaultService] = useState<string>("")
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const searchParams = useSearchParams()
 
   const openModal = (service?: string) => {
@@ -24,6 +25,23 @@ export function MenuContent() {
     setIsModalOpen(false)
     setDefaultService("")
   }
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  // Close mobile menu and prevent body scroll when open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isMobileMenuOpen])
 
   // Check for URL parameters on component mount
   useEffect(() => {
@@ -49,7 +67,7 @@ export function MenuContent() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-primary shadow-sm border-b border-primary">
+      <header className="bg-primary shadow-sm border-b border-primary sticky top-0 z-40">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <Link href="/" className="flex items-center space-x-3">
@@ -71,10 +89,82 @@ export function MenuContent() {
               Contact
             </Link>
           </nav>
-          <Button className="bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
-            Get Quote
-          </Button>
+          <div className="flex items-center gap-4">
+            <Button className="hidden md:block bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
+              Get Quote
+            </Button>
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden text-white hover:text-orange transition-colors"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden fixed inset-0 top-[73px] bg-primary z-30 transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <nav className="flex flex-col p-6 space-y-6">
+            <Link
+              href="/#services"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link
+              href="/#about"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="/gallery"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Gallery
+            </Link>
+            <Link
+              href="/menu"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Menu
+            </Link>
+            <Link
+              href="/#contact"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Button
+              className="bg-orange hover:bg-orange/90 text-white w-full"
+              onClick={() => {
+                openModal()
+                setIsMobileMenuOpen(false)
+              }}
+            >
+              Get Quote
+            </Button>
+          </nav>
+        </div>
+
+        {/* Overlay */}
+        {isMobileMenuOpen && (
+          <div
+            className="md:hidden fixed inset-0 bg-black/50 z-20"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
       </header>
 
       {/* Back to Home */}

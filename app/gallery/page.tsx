@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Menu, X } from "lucide-react"
 import { QuoteModal } from "@/components/quote-modal"
 
 type GalleryTag = "All" | "Catering" | "Daily Lunches" | "Kids Lunches" | "Platters"
@@ -18,9 +18,27 @@ interface GalleryImage {
 export default function GalleryPage() {
   const [activeTag, setActiveTag] = useState<GalleryTag>("All")
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  // Close mobile menu and prevent body scroll when open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isMobileMenuOpen])
 
   // Gallery images organized by category
   const galleryImages: GalleryImage[] = [
@@ -488,7 +506,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-primary shadow-sm border-b border-primary">
+      <header className="bg-primary shadow-sm border-b border-primary sticky top-0 z-40">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <Link href="/" className="flex items-center space-x-3">
@@ -505,17 +523,89 @@ export default function GalleryPage() {
             <Link href="/gallery" className="text-white hover:text-orange transition-colors">
               Gallery
             </Link>
+            <Link href="/menu" className="text-white hover:text-orange transition-colors cursor-pointer">
+              Menu
+            </Link>
             <Link href="/#contact" className="text-white hover:text-orange transition-colors">
               Contact
             </Link>
-            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">
+          </nav>
+          <div className="flex items-center gap-4">
+            <Button className="hidden md:block bg-orange hover:bg-orange/90 text-white" onClick={openModal}>
+              Get Quote
+            </Button>
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden text-white hover:text-orange transition-colors"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden fixed inset-0 top-[73px] bg-primary z-30 transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <nav className="flex flex-col p-6 space-y-6">
+            <Link
+              href="/#services"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link
+              href="/#about"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="/gallery"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Gallery
+            </Link>
+            <Link
+              href="/menu"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Menu
             </Link>
+            <Link
+              href="/#contact"
+              className="text-white hover:text-orange transition-colors text-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Button
+              className="bg-orange hover:bg-orange/90 text-white w-full"
+              onClick={() => {
+                openModal()
+                setIsMobileMenuOpen(false)
+              }}
+            >
+              Get Quote
+            </Button>
           </nav>
-          <Button className="bg-orange hover:bg-orange/90 text-white" onClick={openModal}>
-            Get Quote
-          </Button>
         </div>
+
+        {/* Overlay */}
+        {isMobileMenuOpen && (
+          <div
+            className="md:hidden fixed inset-0 bg-black/50 z-20"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
       </header>
 
       {/* Back to Home */}
