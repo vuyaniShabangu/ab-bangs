@@ -10,6 +10,15 @@ import { ArrowLeft, Phone, MessageCircle, Facebook, Instagram, Menu, X } from "l
 import { QuoteModal } from "@/components/quote-modal"
 import { KidsMenu } from "@/constants/kidsMenu"
 
+const schools = [
+  "Lion King",
+  "BreinRem",
+  "Tiger Kloof",
+  "Stellaland Primary",
+  "Vryburg High",
+  "Kismet Secondary",
+];
+
 export function MenuContent() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [defaultService, setDefaultService] = useState<string>("")
@@ -71,26 +80,52 @@ export function MenuContent() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <Link href="/" className="flex items-center space-x-3">
-              <Image src="/logo.svg" alt="Bang's Kitchen Logo" width={50} height={50} className="h-12 w-auto" />
+              <Image
+                src="/logo.svg"
+                alt="Bang's Kitchen Logo"
+                width={50}
+                height={50}
+                className="h-12 w-auto"
+              />
             </Link>
           </div>
           <nav className="hidden md:flex space-x-8">
-            <Link href="/#services" className="text-white hover:text-orange transition-colors">
+            <Link
+              href="/#services"
+              className="text-white hover:text-orange transition-colors"
+            >
               Services
             </Link>
-            <Link href="/#about" className="text-white hover:text-orange transition-colors">
+            <Link
+              href="/#about"
+              className="text-white hover:text-orange transition-colors"
+            >
               About
             </Link>
-            <Link href="/gallery" className="text-white hover:text-orange transition-colors">
+            <Link
+              href="/gallery"
+              className="text-white hover:text-orange transition-colors"
+            >
               Gallery
             </Link>
-            <Link className="text-white hover:text-orange transition-colors cursor-pointer" href="/menu">Menu</Link>
-            <Link href="/#contact" className="text-white hover:text-orange transition-colors">
+            <Link
+              className="text-white hover:text-orange transition-colors cursor-pointer"
+              href="/menu"
+            >
+              Menu
+            </Link>
+            <Link
+              href="/#contact"
+              className="text-white hover:text-orange transition-colors"
+            >
               Contact
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button className="hidden md:block bg-orange hover:bg-orange/90 text-white" onClick={() => openModal()}>
+            <Button
+              className="hidden md:block bg-orange hover:bg-orange/90 text-white"
+              onClick={() => openModal()}
+            >
               Get Quote
             </Button>
             {/* Mobile menu button */}
@@ -99,7 +134,11 @@ export function MenuContent() {
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -149,8 +188,8 @@ export function MenuContent() {
             <Button
               className="bg-orange hover:bg-orange/90 text-white w-full"
               onClick={() => {
-                openModal()
-                setIsMobileMenuOpen(false)
+                openModal();
+                setIsMobileMenuOpen(false);
               }}
             >
               Get Quote
@@ -170,7 +209,10 @@ export function MenuContent() {
       {/* Back to Home */}
       <div className="bg-cream py-4">
         <div className="container mx-auto px-4">
-          <Link href="/" className="inline-flex items-center text-primary hover:text-orange transition-colors">
+          <Link
+            href="/"
+            className="inline-flex items-center text-primary hover:text-orange transition-colors"
+          >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Link>
@@ -180,11 +222,13 @@ export function MenuContent() {
       {/* Menu Header */}
       <section className="bg-cream py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold text-primary mb-4">BANG'S KITCHEN</h1>
+          <h1 className="text-5xl font-bold text-primary mb-4">
+            BANG'S KITCHEN
+          </h1>
           <h2 className="text-3xl font-bold text-orange mb-6">Complete Menu</h2>
           <p className="text-lg text-primary/80 max-w-2xl mx-auto">
-            From intimate gatherings to large corporate events, we have the perfect catering solution for every
-            occasion.
+            From intimate gatherings to large corporate events, we have the
+            perfect catering solution for every occasion.
           </p>
         </div>
       </section>
@@ -192,10 +236,17 @@ export function MenuContent() {
       {/* Daily Meals */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold text-primary text-center mb-12">DAILY MEALS</h3>
-          <p className="text-center text-lg text-gray-700 mb-6">1 Protein served with 3 sides (subject to availability).</p>
+          <h3 className="text-4xl font-bold text-primary text-center mb-12">
+            DAILY MEALS
+          </h3>
+          <p className="text-center text-lg text-gray-700 mb-6">
+            1 Protein served with 3 sides (subject to availability).
+          </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <Card className="border-2 hover:border-orange transition-colors" style={{ borderColor: '#39564a' }}>
+            <Card
+              className="border-2 hover:border-orange transition-colors"
+              style={{ borderColor: "#39564a" }}
+            >
               <CardHeader>
                 <CardTitle className="text-xl text-primary">PROTEINS</CardTitle>
               </CardHeader>
@@ -218,13 +269,20 @@ export function MenuContent() {
                 </div>
                 <div className="flex flex-col items-center mt-4">
                   <span className="font-bold text-primary">Combo Meal</span>
-                  <span className="text-sm text-gray-600">(x2 R160 proteins + sides)</span>
+                  <span className="text-sm text-gray-600">
+                    (x2 R160 proteins + sides)
+                  </span>
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-2 hover:border-orange transition-colors md:col-span-2 lg:col-span-2" style={{ borderColor: '#39564a' }}>
+            <Card
+              className="border-2 hover:border-orange transition-colors md:col-span-2 lg:col-span-2"
+              style={{ borderColor: "#39564a" }}
+            >
               <CardHeader>
-                <CardTitle className="text-xl text-primary">SIDES <span className="text-orange">@R18.00 each</span></CardTitle>
+                <CardTitle className="text-xl text-primary">
+                  SIDES <span className="text-orange">@R18.00 each</span>
+                </CardTitle>
               </CardHeader>
               <CardContent className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2">
                 <span>1. Potatoes and mushrooms</span>
@@ -243,7 +301,12 @@ export function MenuContent() {
             </Card>
           </div>
           <div className="flex justify-center">
-            <Button className="bg-orange hover:bg-orange/90 text-white px-8 py-3" onClick={() => openModal("daily")}>Get Daily Meal Quote</Button>
+            <Button
+              className="bg-orange hover:bg-orange/90 text-white px-8 py-3"
+              onClick={() => openModal("daily")}
+            >
+              Get Daily Meal Quote
+            </Button>
           </div>
         </div>
       </section>
@@ -251,22 +314,30 @@ export function MenuContent() {
       {/* Kids Lunchbox Packages */}
       <section id="kids-lunches" className="bg-cream py-16">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold text-primary text-center mb-8">KIDS LUNCHBOX PACKAGES</h3>
+          <h3 className="text-4xl font-bold text-primary text-center mb-8">
+            KIDS LUNCHBOX PACKAGES
+          </h3>
           <p className="text-center text-lg text-gray-600 mb-4">
             "All meals delivered to school or collected"
           </p>
-          <p className="text-center text-sm text-orange font-bold mb-12">NB: Local schools only</p>
+          <p className="text-center text-sm text-orange font-bold mb-12">
+            NB: Local schools only
+          </p>
 
           {/* Daily Menu Options */}
           <div className="mb-12">
-            <h4 className="text-2xl font-bold text-primary mb-6 text-center">Kids Pre-School/Creche Daily Menu Options</h4>
+            <h4 className="text-2xl font-bold text-primary mb-6 text-center">
+              Kids Pre-School/Creche Daily Menu Options
+            </h4>
             <div className="overflow-x-auto ">
               <table className="w-full border-collapse border border-cream">
                 <thead className="rounded-t-md">
                   <tr className="bg-primary text-white">
                     <th className="border border-cream p-3 text-left">Day</th>
                     <th className="border border-cream p-3 text-left">Lunch</th>
-                    <th className="border border-cream p-3 text-left">Veg (Cooked/Fresh)</th>
+                    <th className="border border-cream p-3 text-left">
+                      Veg (Cooked/Fresh)
+                    </th>
                     <th className="border border-cream p-3 text-left">Snack</th>
                     <th className="border border-cream p-3 text-left">Drink</th>
                   </tr>
@@ -274,42 +345,58 @@ export function MenuContent() {
                 <tbody className="bg-white">
                   <tr className="hover:bg-cream/50">
                     <td className="border border-cream p-3 font-bold">01</td>
-                    <td className="border border-cream p-3">Rice & Chicken Drumsticks</td>
-                    <td className="border border-cream p-3">Cauliflower/Broccoli</td>
+                    <td className="border border-cream p-3">
+                      Rice & Chicken Drumsticks
+                    </td>
+                    <td className="border border-cream p-3">
+                      Cauliflower/Broccoli
+                    </td>
                     <td className="border border-cream p-3">Fruit + Yogurt</td>
                     <td className="border border-cream p-3">Juice</td>
                   </tr>
                   <tr className="hover:bg-cream/50">
                     <td className="border border-cream p-3 font-bold">02</td>
-                    <td className="border border-cream p-3">Mash Potato & Wors</td>
+                    <td className="border border-cream p-3">
+                      Mash Potato & Wors
+                    </td>
                     <td className="border border-cream p-3">Butternut</td>
                     <td className="border border-cream p-3">Fruit + Yogurt</td>
                     <td className="border border-cream p-3">Juice</td>
                   </tr>
                   <tr className="hover:bg-cream/50">
                     <td className="border border-cream p-3 font-bold">03</td>
-                    <td className="border border-cream p-3">Pasta and Meatballs</td>
+                    <td className="border border-cream p-3">
+                      Pasta and Meatballs
+                    </td>
                     <td className="border border-cream p-3">Baby Tomatoes</td>
                     <td className="border border-cream p-3">Fruit + Yogurt</td>
                     <td className="border border-cream p-3">Juice</td>
                   </tr>
                   <tr className="hover:bg-cream/50">
                     <td className="border border-cream p-3 font-bold">04</td>
-                    <td className="border border-cream p-3">Sweet Potato Chips + Hake</td>
-                    <td className="border border-cream p-3">Coleslaw (Cabbage+Carrots)</td>
+                    <td className="border border-cream p-3">
+                      Sweet Potato Chips + Hake
+                    </td>
+                    <td className="border border-cream p-3">
+                      Coleslaw (Cabbage+Carrots)
+                    </td>
                     <td className="border border-cream p-3">Fruit + Yogurt</td>
                     <td className="border border-cream p-3">Juice</td>
                   </tr>
                   <tr className="hover:bg-cream/50">
                     <td className="border border-cream p-3 font-bold">05</td>
-                    <td className="border border-cream p-3">Mealie Rice & Chicken Wing</td>
+                    <td className="border border-cream p-3">
+                      Mealie Rice & Chicken Wing
+                    </td>
                     <td className="border border-cream p-3">Sweet Corn</td>
                     <td className="border border-cream p-3">Fruit + Yogurt</td>
                     <td className="border border-cream p-3">Juice</td>
                   </tr>
                   <tr className="hover:bg-cream/50">
                     <td className="border border-cream p-3 font-bold">06</td>
-                    <td className="border border-cream p-3">Fish & Potato Chips</td>
+                    <td className="border border-cream p-3">
+                      Fish & Potato Chips
+                    </td>
                     <td className="border border-cream p-3">Coleslaw</td>
                     <td className="border border-cream p-3">Fruit + Yogurt</td>
                     <td className="border border-cream p-3">Juice</td>
@@ -324,22 +411,35 @@ export function MenuContent() {
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="flex items-center bg-orange text-white min-h-32 space-y-0 justify-center rounded-t-md">
                 <CardTitle className="text-center pb-2">FULL PACKAGE</CardTitle>
-                <p className="text-center text-sm">Meal + Juice + Yogurt + Fruit & Chips</p>
+                <p className="text-center text-sm">
+                  Meal + Juice + Yogurt + Fruit & Chips
+                </p>
                 <p className="text-center text-sm">*See menu options below</p>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Daily:</span>
-                    <span className="text-xl font-bold text-orange">R150.00</span>
+                    <span className="flex space-x-2">
+                      <span className="text-xl font-bold text-orange">
+                        R100.00
+                      </span>
+                      <span className="text-xl font-bold text-green-800">
+                        (R50 OFF!)
+                      </span>
+                    </span>
                   </div>
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Weekly:</span>
-                    <span className="text-xl font-bold text-orange">R400.00</span>
+                    <span className="text-xl font-bold text-orange">
+                      R400.00
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-bold">Monthly:</span>
-                    <span className="text-xl font-bold text-orange">R1200.00</span>
+                    <span className="text-xl font-bold text-orange">
+                      R1200.00
+                    </span>
                   </div>
                 </div>
                 <Button
@@ -353,7 +453,9 @@ export function MenuContent() {
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="flex items-center bg-primary text-white h-32 space-y-0 justify-center rounded-t-md">
-                <CardTitle className="text-center  pb-2">BUDGET / AFTERCARE PACKAGE</CardTitle>
+                <CardTitle className="text-center  pb-2">
+                  BUDGET / AFTERCARE PACKAGE
+                </CardTitle>
                 <p className="text-center text-sm">Meal + Fruit + Water</p>
                 <p className="text-center text-sm">*See menu options below</p>
               </CardHeader>
@@ -361,15 +463,27 @@ export function MenuContent() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Daily:</span>
-                    <span className="text-xl font-bold text-orange">R100.00</span>
+                    <span className="flex space-x-2">
+                      <span className="text-xl font-bold text-orange">
+                        R80.00
+                      </span>
+                      <span className="text-xl font-bold text-green-800">
+                        (20 OFF!)
+                      </span>
+                    </span>
                   </div>
                   <div className="flex justify-between items-center border-b border-cream pb-2">
                     <span className="font-bold">Weekly:</span>
-                    <span className="text-xl font-bold text-orange">R350.00</span>
+                    <span className="text-xl font-bold text-orange">
+                      R350.00
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-bold">Monthly:</span>
-                    <span className="text-xl font-bold text-orange"> R900.00</span>
+                    <span className="text-xl font-bold text-orange">
+                      {" "}
+                      R900.00
+                    </span>
                   </div>
                 </div>
                 <Button
@@ -382,11 +496,48 @@ export function MenuContent() {
             </Card>
           </div>
 
+          <div className="bg-white py-10 px-4 mt-14 rounded-md border-2 border-orange">
+            <h1 className="text-center text-3xl pb-2">Our Specials!</h1>
+            <p className="text-center text-lg">15 - 30 January</p>
+            <div className="grid grid-cols-2 mt-10 ">
+              <div className="h-40 md:h-32 justify-around flex flex-col px-4 items-center border-r-2 border-r-black">
+                <h1 className="text-xl md:text-2xl text-center">FULL PACKAGE</h1>
+                <h2 className="text-xl text-orange font-bold text-center">
+                  R900.00
+                </h2>
+              </div>
+              <div className="h-40 md:h-32 justify-around flex flex-col px-4 items-center">
+                <h1 className="text-xl md:text-2xl text-center">
+                  BUDGET / AFTERCARE PACKAGE
+                </h1>
+                <h2 className="text-xl text-orange font-bold text-center">
+                  R700.00
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white py-10 mt-14 px-6 rounded-md shadow-sm">
+            <h1 className="text-3xl text-center">Schools we deliver to</h1>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+              {schools.map((school) => (
+                <div className="bg-cream py-4 px-3 rounded-md shadow-md hover:shadow-sm cursor-pointer transition ease-in-out duration-150">
+                  <h1 className="text-center">{school}</h1>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-20">
-            <h1 className="text-2xl font-bold text-primary mb-6 text-center">Kids Lunch Menu</h1>
+            <h1 className="text-2xl font-bold text-primary mb-6 text-center">
+              Kids Lunch Menu
+            </h1>
             <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1">
-            {KidsMenu.map((menu, index) => (
-                <Card key={index} className="h-20 flex flex-col justify-center items-center p-2 mb-1 hover:shadow-md">
+              {KidsMenu.map((menu, index) => (
+                <Card
+                  key={index}
+                  className="h-20 flex flex-col justify-center items-center p-2 mb-1 hover:shadow-md"
+                >
                   <h1 className="text-center">{menu}</h1>
                 </Card>
               ))}
@@ -398,24 +549,31 @@ export function MenuContent() {
       {/* Platter Menu */}
       <section id="platters" className="py-16">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold text-primary text-center mb-12">PLATTER MENU</h3>
+          <h3 className="text-4xl font-bold text-primary text-center mb-12">
+            PLATTER MENU
+          </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader>
-                <CardTitle className="text-xl text-primary">MEAT PLATTERS</CardTitle>
+                <CardTitle className="text-xl text-primary">
+                  MEAT PLATTERS
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="border-b border-cream pb-4">
                   <h4 className="font-bold text-primary mb-2">BANG! SPECIAL</h4>
                   <p className="text-gray-600 text-sm mb-2">
-                    Chicken wings, meatballs, cocktail sausages, pastries & nuggets
+                    Chicken wings, meatballs, cocktail sausages, pastries &
+                    nuggets
                   </p>
                   <p className="text-2xl font-bold text-orange">R800</p>
                 </div>
                 <div>
                   <h4 className="font-bold text-primary mb-2">MEATY PLATTER</h4>
-                  <p className="text-gray-600 text-sm mb-2">Chicken wings, meatballs, pork ribs, nuggets, wors</p>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Chicken wings, meatballs, pork ribs, nuggets, wors
+                  </p>
                   <p className="text-2xl font-bold text-orange">R950</p>
                 </div>
               </CardContent>
@@ -423,16 +581,22 @@ export function MenuContent() {
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader>
-                <CardTitle className="text-xl text-primary">FRESH OPTIONS</CardTitle>
+                <CardTitle className="text-xl text-primary">
+                  FRESH OPTIONS
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="border-b border-cream pb-4">
                   <h4 className="font-bold text-primary mb-2">FRUIT PLATTER</h4>
-                  <p className="text-gray-600 text-sm mb-2">Selection of seasonal fruit</p>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Selection of seasonal fruit
+                  </p>
                   <p className="text-2xl font-bold text-orange">R650</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary mb-2">CHEESE, CRACKERS & BILTON</h4>
+                  <h4 className="font-bold text-primary mb-2">
+                    CHEESE, CRACKERS & BILTON
+                  </h4>
                   <p className="text-2xl font-bold text-orange">R650</p>
                 </div>
               </CardContent>
@@ -440,15 +604,21 @@ export function MenuContent() {
 
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader>
-                <CardTitle className="text-xl text-primary">WRAPS & SANDWICHES</CardTitle>
+                <CardTitle className="text-xl text-primary">
+                  WRAPS & SANDWICHES
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="border-b border-cream pb-4">
-                  <h4 className="font-bold text-primary mb-2">SANDWICH PLATTER</h4>
+                  <h4 className="font-bold text-primary mb-2">
+                    SANDWICH PLATTER
+                  </h4>
                   <p className="text-2xl font-bold text-orange">R550</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary mb-2">CHICKEN WRAP PLATTER</h4>
+                  <h4 className="font-bold text-primary mb-2">
+                    CHICKEN WRAP PLATTER
+                  </h4>
                   <p className="text-2xl font-bold text-orange">R680</p>
                 </div>
               </CardContent>
@@ -458,15 +628,19 @@ export function MenuContent() {
       </section>
 
       {/* Catering Services */}
-      <section className="py-16" style={{ backgroundColor: '#f1e1d3' }}>
+      <section className="py-16" style={{ backgroundColor: "#f1e1d3" }}>
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold text-primary text-center mb-12">CATERING SERVICES</h3>
+          <h3 className="text-4xl font-bold text-primary text-center mb-12">
+            CATERING SERVICES
+          </h3>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="bg-primary text-white rounded-t-md">
                 <CardTitle className="text-center">WEDDING & EVENTS</CardTitle>
-                <p className="text-center text-3xl font-bold text-orange">R355 P/P</p>
+                <p className="text-center text-3xl font-bold text-orange">
+                  R355 P/P
+                </p>
               </CardHeader>
               <CardContent className="p-6">
                 <ul className="space-y-2 text-gray-700">
@@ -489,7 +663,9 @@ export function MenuContent() {
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="bg-primary text-white rounded-t-md">
                 <CardTitle className="text-center">GOV & CORPORATE</CardTitle>
-                <p className="text-center text-3xl font-bold text-orange">R160 P/P</p>
+                <p className="text-center text-3xl font-bold text-orange">
+                  R160 P/P
+                </p>
               </CardHeader>
               <CardContent className="p-6">
                 <h4 className="font-bold text-primary mb-3">LUNCH</h4>
@@ -512,7 +688,9 @@ export function MenuContent() {
             <Card className="border-2 border-cream hover:border-orange transition-colors">
               <CardHeader className="bg-primary text-white rounded-t-md">
                 <CardTitle className="text-center">PRE PACKED MEALS</CardTitle>
-                <p className="text-center text-3xl font-bold text-orange">R110 P/P</p>
+                <p className="text-center text-3xl font-bold text-orange">
+                  R110 P/P
+                </p>
               </CardHeader>
               <CardContent className="p-6">
                 <h4 className="font-bold text-primary mb-3">TAKE-AWAY</h4>
@@ -538,11 +716,15 @@ export function MenuContent() {
       {/* Contact Information */}
       <section className="bg-primary py-16">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-4xl font-bold text-white mb-8">CONTACT INFORMATION</h3>
+          <h3 className="text-4xl font-bold text-white mb-8">
+            CONTACT INFORMATION
+          </h3>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="text-white">
-              <h4 className="text-xl font-bold mb-4 text-orange">Phone/WhatsApp</h4>
+              <h4 className="text-xl font-bold mb-4 text-orange">
+                Phone/WhatsApp
+              </h4>
               <div className="space-y-2">
                 <div className="flex items-center justify-center space-x-2">
                   <Phone className="h-5 w-5" />
@@ -556,7 +738,9 @@ export function MenuContent() {
             </div>
 
             <div className="text-white">
-              <h4 className="text-xl font-bold mb-4 text-orange">Social Media</h4>
+              <h4 className="text-xl font-bold mb-4 text-orange">
+                Social Media
+              </h4>
               <div className="space-y-2">
                 <div className="flex items-center justify-center space-x-2">
                   <Facebook className="h-5 w-5" />
@@ -571,7 +755,10 @@ export function MenuContent() {
           </div>
 
           <div className="mt-8">
-            <Button className="bg-orange hover:bg-orange/90 text-white px-8 py-3" onClick={() => openModal()}>
+            <Button
+              className="bg-orange hover:bg-orange/90 text-white px-8 py-3"
+              onClick={() => openModal()}
+            >
               Get Your Quote Today
             </Button>
           </div>
@@ -584,7 +771,13 @@ export function MenuContent() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <Image src="/logo.svg" alt="Bang's Kitchen Logo" width={40} height={40} className="h-10 w-auto" />
+                <Image
+                  src="/logo.svg"
+                  alt="Bang's Kitchen Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-white/80">
                 Catering excellence for individuals, corporations, and schools.
@@ -595,17 +788,26 @@ export function MenuContent() {
               <h5 className="text-lg font-bold text-white mb-4">Services</h5>
               <ul className="space-y-2 text-white/80">
                 <li>
-                  <Link href="/#services" className="hover:text-orange transition-colors">
+                  <Link
+                    href="/#services"
+                    className="hover:text-orange transition-colors"
+                  >
                     Individual Meals
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="hover:text-orange transition-colors">
+                  <Link
+                    href="/#services"
+                    className="hover:text-orange transition-colors"
+                  >
                     Catering Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="hover:text-orange transition-colors">
+                  <Link
+                    href="/#services"
+                    className="hover:text-orange transition-colors"
+                  >
                     School Lunches
                   </Link>
                 </li>
@@ -616,22 +818,34 @@ export function MenuContent() {
               <h5 className="text-lg font-bold text-white mb-4">Company</h5>
               <ul className="space-y-2 text-white/80">
                 <li>
-                  <Link href="/#about" className="hover:text-orange transition-colors">
+                  <Link
+                    href="/#about"
+                    className="hover:text-orange transition-colors"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#about" className="hover:text-orange transition-colors">
+                  <Link
+                    href="/#about"
+                    className="hover:text-orange transition-colors"
+                  >
                     Our Story
                   </Link>
                 </li>
                 <li>
-                  <Link className="hover:text-orange transition-colors cursor-pointer" href="/menu">
+                  <Link
+                    className="hover:text-orange transition-colors cursor-pointer"
+                    href="/menu"
+                  >
                     Menu
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="hover:text-orange transition-colors">
+                  <Link
+                    href="/#contact"
+                    className="hover:text-orange transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -653,13 +867,19 @@ export function MenuContent() {
           </div>
 
           <div className="border-t border-white/20 mt-8 pt-8 text-center">
-            <p className="text-white/80">© 2025 Bang's Kitchen. All rights reserved.</p>
+            <p className="text-white/80">
+              © 2025 Bang's Kitchen. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
 
       {/* Quote Modal */}
-      <QuoteModal isOpen={isModalOpen} onClose={closeModal} defaultService={defaultService} />
+      <QuoteModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        defaultService={defaultService}
+      />
     </div>
-  )
+  );
 }
