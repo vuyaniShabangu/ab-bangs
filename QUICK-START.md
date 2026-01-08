@@ -66,6 +66,7 @@ npm run build
 |---------|-------------|
 | `npm run dev` | Development server (for making changes) |
 | `npm run build` | Build for production |
+| `npm run verify` | Verify build is correct (checks all files match) |
 | `npm run serve` | Test the production build locally |
 | `npm run test:build` | Build + test in one command |
 
