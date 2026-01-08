@@ -468,7 +468,7 @@ export function MenuContent() {
                         R80.00
                       </span>
                       <span className="text-xl font-bold text-green-800">
-                        (20 OFF!)
+                        (R20 OFF!)
                       </span>
                     </span>
                   </div>
@@ -521,7 +521,7 @@ export function MenuContent() {
             <h1 className="text-3xl text-center">Schools we deliver to.</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
               {schools.map((school) => (
-                <div className="bg-cream py-4 px-3 rounded-md shadow-md hover:shadow-sm cursor-pointer transition ease-in-out duration-150">
+                <div key={school} className="bg-cream py-4 px-3 rounded-md shadow-md hover:shadow-sm cursor-pointer transition ease-in-out duration-150">
                   <h1 className="text-center">{school}</h1>
                 </div>
               ))}
