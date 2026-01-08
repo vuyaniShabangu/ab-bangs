@@ -518,7 +518,7 @@ export function MenuContent() {
           </div>
 
           <div className="bg-white py-10 mt-14 px-6 rounded-md shadow-sm">
-            <h1 className="text-3xl text-center">Schools we deliver to</h1>
+            <h1 className="text-3xl text-center">Schools we deliver to.</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
               {schools.map((school) => (
                 <div className="bg-cream py-4 px-3 rounded-md shadow-md hover:shadow-sm cursor-pointer transition ease-in-out duration-150">
