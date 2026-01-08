@@ -496,36 +496,119 @@ export function MenuContent() {
             </Card>
           </div>
 
-          <div className="bg-white py-10 px-4 mt-14 rounded-md border-2 border-orange">
-            <h1 className="text-center text-3xl pb-2">Our Specials!</h1>
-            <p className="text-center text-lg">15 - 30 January</p>
-            <div className="grid grid-cols-2 mt-10 ">
-              <div className="h-40 md:h-32 justify-around flex flex-col px-4 items-center border-r-2 border-r-black">
-                <h1 className="text-xl md:text-2xl text-center">FULL PACKAGE</h1>
-                <h2 className="text-xl text-orange font-bold text-center">
-                  R900.00
-                </h2>
+          {/* January Special Pricing */}
+          <div className="mt-12 mb-8">
+            <Card className="border-2 border-orange overflow-hidden">
+              <div className="bg-gradient-to-r from-orange to-orange/80 py-6 px-6">
+                <h3 className="text-3xl font-bold text-white text-center mb-2">
+                  January Special!
+                </h3>
+                <p className="text-center text-white/90 text-lg font-semibold">
+                  Monthly Package Savings • Valid: 15 - 30 January
+                </p>
               </div>
-              <div className="h-40 md:h-32 justify-around flex flex-col px-4 items-center">
-                <h1 className="text-xl md:text-2xl text-center">
-                  BUDGET / AFTERCARE PACKAGE
-                </h1>
-                <h2 className="text-xl text-orange font-bold text-center">
-                  R700.00
-                </h2>
-              </div>
-            </div>
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="border-2 border-cream rounded-lg hover:border-orange transition-all overflow-hidden">
+                    <div className="bg-cream text-center py-4 px-4">
+                      <h4 className="text-primary text-xl font-bold mb-1">
+                        FULL PACKAGE
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        Monthly Subscription Special
+                      </p>
+                    </div>
+                    <div className="p-6 text-center bg-white">
+                      <div className="mb-4">
+                        <span className="text-sm text-gray-500 line-through block mb-1">
+                          Regular: R1200.00
+                        </span>
+                        <span className="text-4xl font-bold text-orange">
+                          R900.00
+                        </span>
+                        <span className="text-sm text-primary block mt-1">
+                          /month
+                        </span>
+                      </div>
+                      <div className="bg-green-50 border border-green-200 rounded-md py-2 px-3">
+                        <span className="text-green-800 font-bold text-lg">
+                          Save R300!
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-2 border-cream rounded-lg hover:border-orange transition-all overflow-hidden">
+                    <div className="bg-cream text-center py-4 px-4">
+                      <h4 className="text-primary text-xl font-bold mb-1">
+                        BUDGET / AFTERCARE PACKAGE
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        Monthly Subscription Special
+                      </p>
+                    </div>
+                    <div className="p-6 text-center bg-white">
+                      <div className="mb-4">
+                        <span className="text-sm text-gray-500 line-through block mb-1">
+                          Regular: R900.00
+                        </span>
+                        <span className="text-4xl font-bold text-orange">
+                          R700.00
+                        </span>
+                        <span className="text-sm text-primary block mt-1">
+                          /month
+                        </span>
+                      </div>
+                      <div className="bg-green-50 border border-green-200 rounded-md py-2 px-3">
+                        <span className="text-green-800 font-bold text-lg">
+                          Save R200!
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="bg-white py-10 mt-14 px-6 rounded-md shadow-sm">
-            <h1 className="text-3xl text-center">Schools we deliver to.</h1>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-              {schools.map((school) => (
-                <div key={school} className="bg-cream py-4 px-3 rounded-md shadow-md hover:shadow-sm cursor-pointer transition ease-in-out duration-150">
-                  <h1 className="text-center">{school}</h1>
-                </div>
-              ))}
+          {/* Schools Delivery Section */}
+          <div className="mt-12">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-primary mb-2">
+                Schools We Deliver To
+              </h3>
+              <p className="text-gray-600 text-lg">
+                Convenient lunch delivery to these local schools
+              </p>
             </div>
+            <Card className="border-2 border-cream">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {schools.map((school) => (
+                    <div
+                      key={school}
+                      className="flex items-center justify-center bg-gradient-to-br from-cream to-cream/50 py-4 px-4 rounded-lg border-2 border-transparent hover:border-orange transition-all duration-200"
+                    >
+                      <span className="text-primary font-semibold text-center text-lg">
+                        {school}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 pt-6 border-t border-cream">
+                  <p className="text-center text-sm text-gray-600">
+                    Don't see your school?{" "}
+                    <Button
+                      variant="link"
+                      className="text-orange hover:text-orange/80 p-0 h-auto font-semibold"
+                      onClick={() => openModal("school")}
+                    >
+                      Contact us to inquire
+                    </Button>
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="mt-20">
